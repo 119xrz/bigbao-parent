@@ -3,12 +3,6 @@
 ### Example user template
 
 # IntelliJ project files
-.idea
 *.iml
-out
-gen
-.gitignore
 .idea/
-bigbao-graph/bigbao-graph.iml
-bigbao-graph/target/
-/.gitignore
+target/
