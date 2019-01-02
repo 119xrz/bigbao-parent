@@ -1,0 +1,27 @@
+server:
+  port: 8090
+  servlet:
+    context-path: /graph
+spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  redis:
+    cluster:
+      nodes: 192.168.100.122:6379,192.168.100.123:6379,192.168.100.124:6379,192.168.100.125:6379,192.168.100.126:6379,192.168.100.127:6379
+      max-redirects: 3
+    #host: 127.0.0.1
+    #port: 6379
+    #password: 123456
+    timeout: 3000
+    database: 0
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 1
+logging:
+  level:
+    root: info
+    com.bigbao: info
