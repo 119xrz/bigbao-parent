@@ -1,0 +1,15 @@
+server:
+  port: 8091
+  servlet:
+    context-path: /data
+    session:
+      timeout: 3600s
+spring:
+  profiles:
+    active: dev
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+logging:
+  level:
+    com.bigbao: info
