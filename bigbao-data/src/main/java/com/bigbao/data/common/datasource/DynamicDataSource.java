@@ -6,9 +6,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class DynamicDataSource extends AbstractRoutingDataSource {
 
-
     @Override
     protected Object determineCurrentLookupKey() {
-        return null;
+        return DBContextHolder.get();
     }
 }

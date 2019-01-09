@@ -1,6 +1,6 @@
 spring:
   datasource:
-    one:
+    master:
       url: jdbc:mysql://192.168.100.103:3306/ccx_graph?useUnicode=true&amp;characterEncoding=utf8&allowMultiQueries=true
       username: u_graph
       password: tpvs3y1kvGl0AgYOU
@@ -19,8 +19,27 @@ spring:
       testOnReturn: false
       poolPreparedStatements: true
       maxOpenPreparedStatements: 20
-    two:
-      url: jdbc:mysql://192.168.100.103:3306/ccx_graph?useUnicode=true&amp;characterEncoding=utf8&allowMultiQueries=true
+    slave1:
+      url: jdbc:mysql://192.168.100.35:3306/ccx_graph?useUnicode=true&amp;characterEncoding=utf8&allowMultiQueries=true
+      username: u_graph
+      password: tpvs3y1kvGl0AgYOU
+      driver-class-name: com.mysql.jdbc.Driver
+      type: com.alibaba.druid.pool.DruidDataSource
+      filters: stat
+      maxActive: 5
+      initialSize: 1
+      maxWait: 60000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+    slave2:
+      url: jdbc:mysql://192.168.100.35:3306/ccx_graph?useUnicode=true&amp;characterEncoding=utf8&allowMultiQueries=true
       username: u_graph
       password: tpvs3y1kvGl0AgYOU
       driver-class-name: com.mysql.jdbc.Driver

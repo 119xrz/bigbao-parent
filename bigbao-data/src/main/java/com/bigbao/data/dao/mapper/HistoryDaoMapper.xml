@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bigbao.data.beans.HistoryBean">
+
+    <select id="findAll" resultType="HistoryBean">
+        SELECT * FROM graph_history ORDER BY select_date DESC
+    </select>
+
+    <insert id="saveHistory" parameterType="HistoryBean">
+        INSERT INTO graph_history
+        (
+        keyword,
+        risk_level,
+        node_count,
+        risk_node_count,
+        hit_rule_count,
+        selector,
+        select_date
+        )
+        VALUES
+        (
+        #{keyword},
+        #{riskLevel},
+        #{nodeCount},
+        #{riskNodeCount},
+        #{hitRuleCount},
+        #{selector},
+        #{selectDate}
+        )
+    </insert>
+
+</mapper>

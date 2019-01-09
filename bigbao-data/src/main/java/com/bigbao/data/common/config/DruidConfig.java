@@ -19,19 +19,6 @@ import org.springframework.context.annotation.Primary;
 @Configuration
 public class DruidConfig {
 
-    @Bean(destroyMethod = "close", initMethod = "init")
-    @Primary
-    @ConfigurationProperties(prefix = "spring.datasource.one")
-    public DruidDataSource oneDataSource(){
-        return new DruidDataSource();
-    }
-
-    @Bean(destroyMethod = "close", initMethod = "init")
-    @ConfigurationProperties(prefix = "spring.datasource.two")
-    public DruidDataSource twoDataSource(){
-        return new DruidDataSource();
-    }
-
     @Bean
     public ServletRegistrationBean druidServlet() {
         ServletRegistrationBean reg = new ServletRegistrationBean();
